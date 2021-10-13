@@ -1,17 +1,17 @@
-import "./style.css"
+import "../style.css"
 
-const App = () => {
+const NavBar = () => {
     return (
         <header>
             <nav className="mi-nav">
-                <h1>Mi Tienda</h1>
+                <h1>Coderstore</h1>
                 <div id="links">
                     <a href="">Sobre Nosotros</a>
-                    <a href="">Tienda</a>
+                    <a href="" id="tienda">Tienda</a>
                 </div>
             </nav>
         </header>
     )
 }
 
-export default App
+export default NavBar
