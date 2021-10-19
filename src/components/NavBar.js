@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../style.css"
+import CartWidget from './CartWidget';
 import {Navbar} from 'react-bootstrap';
 import {Nav} from 'react-bootstrap';
 import {Container} from 'react-bootstrap';
@@ -17,6 +18,7 @@ const NavBar = () => {
                             <Nav.Link href="#home">Home</Nav.Link>
                             <Nav.Link href="#products">Products</Nav.Link>
                             <Nav.Link href="#cart" className="carrito">Cart</Nav.Link>
+                            <CartWidget/>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
