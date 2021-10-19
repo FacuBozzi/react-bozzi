@@ -1,15 +1,26 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../style.css"
+import {Navbar} from 'react-bootstrap';
+import {Nav} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
+
 
 const NavBar = () => {
     return (
         <header>
-            <nav className="mi-nav">
-                <h1>Coderstore</h1>
-                <div id="links">
-                    <a href="">Sobre Nosotros</a>
-                    <a href="" id="tienda">Tienda</a>
-                </div>
-            </nav>
+            <Navbar bg="light" collapseOnSelect expand="lg" variant="light">
+                <Container className="mi-container">
+                    <Navbar.Brand href="#home">Coderstore</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="ms-auto">
+                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="#products">Products</Nav.Link>
+                            <Nav.Link href="#cart" className="carrito">Cart</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         </header>
     )
 }

@@ -3,22 +3,14 @@
     margin: 0%;
 }
 
-.mi-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: tomato;
-    height: 50px;
+.mi-container{
+    max-width: 95%;
 }
 
-h1{
-    margin-left: 10px;
-}
-
-#links{
-    margin-right: 20px;
-}
-
-#tienda{
+nav a{
     margin-left: 15px;
+}
+
+.carrito{
+    margin-right: 15px;
 }
