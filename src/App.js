@@ -9,7 +9,7 @@ const App = () => {
         <>
             <NavBar/>
             <ItemListContainer name="tutores de Coder"/>
-            <Contador onAdd={function() {console.log("Accion realizada exitosamente")}}/>
+            <Contador initial={0} limit={9} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
         </>
     )
 }

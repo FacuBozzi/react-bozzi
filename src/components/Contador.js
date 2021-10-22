@@ -3,32 +3,40 @@ import "../style.css"
 
 const Contador = (props) => {
 
+    const limit = props.limit;
+    const initial = props.initial;
     let [contador, setContador] = useState(0);
-
+    
             const sumarContador = () => {
-
-                setContador(contador + 1);
-                
+                if (contador < limit) {
+                    setContador(contador + 1);
+                } else {
+                    alert("No hay mas stock");
+                }
             }
             const restarContador = () => {
-                
-                setContador(contador - 1);
-
+                if (contador > initial) {
+                    setContador(contador - 1);
+                } else {
+                    alert("No puede elegir un número negativo");
+                }
             }
     return (    
         <>
             <div className="contador-app">
                 <button  onClick={() => {
                     sumarContador();
-                    props.onAdd();
                     }}>Aumentar!
                 </button>
                 <button  onClick={() => {
                     restarContador();
-                    props.onAdd();
                     }}>Restar!
                 </button>
-                <p>Contador actual: {contador}</p>
+                <button  onClick={() => {
+                    props.onAdd();
+                    }}>Agregar al carrito
+                </button>
+                <p id="contador-actual">Contador actual: {contador}</p>
             </div>
         </>
     )
