@@ -5,7 +5,7 @@ const Contador = (props) => {
 
     const limit = props.limit;
     const initial = props.initial;
-    let [contador, setContador] = useState(0);
+    let [contador, setContador] = useState(initial);
     
             const sumarContador = () => {
                 if (contador < limit) {
