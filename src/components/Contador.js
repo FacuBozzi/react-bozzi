@@ -2,7 +2,7 @@ import { useState } from "react"
 import "../style.css"
 
 const Contador = (props) => {
-
+    
     const limit = props.limit;
     const initial = props.initial;
     let [contador, setContador] = useState(initial);
