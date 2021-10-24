@@ -1,13 +1,5 @@
 const Item = ({id, name, stock, price, pictureURL}) => {
 
-    // const Item = new {
-    //     name: '',
-    //     price: 0,
-    //     id: 0,
-    //     stock: 0,
-    //     pictureURL: ''
-    // }
-
     return (
         <>
             <div className="producto-lista" id={id}>
