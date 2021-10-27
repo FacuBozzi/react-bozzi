@@ -12,7 +12,7 @@ const App = () => {
             <Titulo name="tutores de Coder"/>
             <Contador initial={0} limit={9} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
             <ItemList className="todos-productos"/>
-            <ItemListContainer name="facundo"/>
+            <ItemListContainer/>
         </>
     )
 }
