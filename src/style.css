@@ -56,3 +56,10 @@ button{
     height: 230px;
     margin-bottom: 10px;
 }
+
+.producto-descripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}

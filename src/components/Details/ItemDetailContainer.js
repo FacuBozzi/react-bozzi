@@ -1,28 +1,37 @@
 import { useState, useEffect } from "react";
+import Product from "../../product.json";
+import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
 
-    const getItem = [{},
-                    {}];
+    const descripcion = {Product}
 
     const [details, setDetails] = useState([]);
 
-    const promise = () => {
+    const getItem = () => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(getItem)
+                resolve(descripcion)
             }, 2000);
         });
     }
     
     useEffect(() => { 
-        promise().then(setDetails)
+        getItem().then(setDetails)
     }, []);
 
+    const descr=details.Product
+
+    let itemsToRender;
+    if (descr) {
+      itemsToRender = descr.map(desc => {
+        return <ItemDetail key={desc.id} {...desc}></ItemDetail>
+      });
+    }
 
     return (
         <>
-            <p>hola</p>
+            {itemsToRender}
         </>
     )
 }

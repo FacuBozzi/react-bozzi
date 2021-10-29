@@ -23,8 +23,8 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <ItemList items={datos.Product}></ItemList>
-        </>
+            <ItemList items={datos.Product} key={datos.id}></ItemList>
+        </> 
     )
 }
 
