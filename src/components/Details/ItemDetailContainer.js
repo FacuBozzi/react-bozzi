@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Product from "../../product.json";
 import ItemDetail from "./ItemDetail";
+import { Link } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
@@ -31,7 +32,11 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            {itemsToRender}
+            <div className="producto-descripcion">
+                {itemsToRender}
+            </div>
+
+            <button class="back-shopping"><Link className="route-link" to="/category/:id">go back to shopping</Link></button>
         </>
     )
 }

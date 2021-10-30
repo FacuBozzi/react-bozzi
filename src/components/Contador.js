@@ -24,15 +24,15 @@ const Contador = (props) => {
     return (    
         <>
             <div className="contador-app">
-                <button  onClick={() => {
+                <button className="contador-btn" onClick={() => {
                     sumarContador();
                     }}>Aumentar!
                 </button>
-                <button  onClick={() => {
+                <button className="contador-btn" onClick={() => {
                     restarContador();
                     }}>Restar!
                 </button>
-                <button  onClick={() => {
+                <button className="contador-btn" onClick={() => {
                     props.onAdd();
                     }}>Agregar al carrito
                 </button>

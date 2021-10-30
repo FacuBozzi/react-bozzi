@@ -3,6 +3,10 @@
     margin: 0%;
 }
 
+a{
+    text-decoration: none;
+}
+
 .mi-container{
     max-width: 95%;
 }
@@ -31,7 +35,7 @@ nav a{
     margin-top: 5%;
 }
 
-button{
+.contador-btn{
     margin: 4px;
     padding: 5px;
     background-color: #fff;
@@ -51,6 +55,11 @@ button{
     margin-top: 5%;
 }
 
+.item-container{
+    display: flex;
+    justify-content: center;
+}
+
 #picture-store{
     width: 230px;
     height: 230px;
@@ -58,8 +67,90 @@ button{
 }
 
 .producto-descripcion{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    text-align: center;
+}
+
+.produc-desc{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5%;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    font-family:sans-serif;
+    padding: 20px;
+}
+
+.card{
+    width: 300px;
+    height: 470px;
+    border: solid 2px #ccc;
+    padding-top: 25px;
+    padding-right: 0px;
+}
+
+.container-productos{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    text-align: center;
+}
+
+.product-add-button{
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    outline:none;
+    background-color: black;
+    color: white;
+    width: 90%;
+    height: 40px;
+    display: block;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 15px auto;
+    padding:0;
+}
+
+.product-add-button:hover{
+    background-color: white;
+    color: grey;
+    transition: 0.2s;
+}
+
+.product-add-button:active{
+    transform: translateY(2px);
+}
+
+.back-shopping{
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 44px;
+    border: none;
+    outline:none;
+    background-color: black;
+    color: white;
+    width: 400px;
+    height: 40px;
+    display: block;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 25px auto 60px auto;
+    padding:0;
+}
+.back-shopping:hover{
+    background-color: #8b8b8b;
+    color: white;
+    transition: 0.2s;
+}
+
+.route-link {
+    color: inherit;
+    text-decoration: inherit;
 }
