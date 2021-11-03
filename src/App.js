@@ -12,7 +12,6 @@ const App = () => {
             <Router> 
                 <NavBar/>
                 <Titulo name="tutores de Coder"/>
-                <Contador initial={0} limit={9} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
                 <Switch> 
                     <Route path="/" exact> 
                         <ItemListContainer/>
@@ -20,9 +19,6 @@ const App = () => {
                     <Route path="/category/:id" exact> 
                         <ItemListContainer/>
                     </Route>
-                    {/**
-                     * BORRAR COMENTARIOSSSS!!!!!!!!!!!!!!!
-                     */}
                     <Route path="/item/:id" exact> 
                         <ItemDetailContainer/>
                     </Route>

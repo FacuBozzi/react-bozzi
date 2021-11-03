@@ -1,3 +1,5 @@
+@import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+
 *{
     padding: 0%;
     margin: 0%;
@@ -25,6 +27,7 @@ nav a{
 
 .titulo-coderhouse{
     margin-top: 50px;
+    margin-bottom: 80px;
     text-align: center;
 }
 
@@ -35,6 +38,22 @@ nav a{
     margin-top: 5%;
 }
 
+.boton-invisible{
+    background: transparent;
+    border: none !important;
+}
+
+.contador-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.file-plus-fill{
+    font-size: 3rem;
+}
+
 .contador-btn{
     margin: 4px;
     padding: 5px;
@@ -42,10 +61,31 @@ nav a{
     border-radius: 40px;
 }
 
+.agregador-btn{
+    margin: 9px;
+    padding: 8px 20px;
+    background-color: #CCCDC6;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    color: black;
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+.agregador-btn:hover{
+    color: white;
+    background-color: #FF5733;
+    transition: 0.2s;
+}
+
 #contador-actual{
-    margin-top: 10px;
+    margin: 5px 10px 0 10px;
     font-size: 2rem;
     font-weight: bold;
+}
+
+.icono-boton{
+    font-size:2rem;
 }
 
 .producto-lista{
@@ -141,7 +181,7 @@ nav a{
     display: block;
     cursor: pointer;
     text-transform: uppercase;
-    margin: 25px auto 60px auto;
+    margin: 60px auto 60px auto;
     padding:0;
 }
 .back-shopping:hover{

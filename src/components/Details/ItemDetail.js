@@ -1,9 +1,8 @@
-//import ItemList from "../Items/ItemList"
 import { useParams } from "react-router"
+import Contador from "../Contador"
 
 const ItemDetail = ({descripcion}) => {
 
-    console.log(descripcion)
     const { id } = useParams();
 
     return (
@@ -15,14 +14,10 @@ const ItemDetail = ({descripcion}) => {
                         <img src={desc.pictureURL} alt="unisex hoodie" id="picture-store"/>
                         <p>{desc.price}</p>
                         <h4 id="texto-descripcion">{desc.description}</h4>
+                        <h5 id="texto-descripcion">Only {desc.stock} units left.</h5>
+                        <Contador initial={0} stock={descripcion} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
                     </div>
                 ))}
-
-                {/* <h2>{name}</h2>
-                <img src={pictureURL} alt="unisex hoodie" id="picture-store"/>
-                <p>{price}</p>
-                <h4 id="texto-descripcion">{description}</h4> 
-                */}
             </div>
         </>
     )

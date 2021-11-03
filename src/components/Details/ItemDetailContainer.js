@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
-    //const descripcion = {Product}
     const [details, setDetails] = useState([]);
     
     const getItem = () => {
@@ -20,9 +19,6 @@ const ItemDetailContainer = () => {
         getItem().then(setDetails)
     }, []);
     
-    //const descr=details.Product
-    
-    //console.log(descr)
     
     return (
         <>
