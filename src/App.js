@@ -20,6 +20,9 @@ const App = () => {
                     <Route path="/category/:id" exact> 
                         <ItemListContainer/>
                     </Route>
+                    {/**
+                     * BORRAR COMENTARIOSSSS!!!!!!!!!!!!!!!
+                     */}
                     <Route path="/item/:id" exact> 
                         <ItemDetailContainer/>
                     </Route>
