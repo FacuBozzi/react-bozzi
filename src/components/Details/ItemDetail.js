@@ -3,13 +3,13 @@ import { useParams } from "react-router"
 
 const ItemDetail = ({descripcion}) => {
 
-    console.log(descripcion.name)
+    console.log(descripcion)
     const { id } = useParams();
 
     return (
         <>
             <div className="produc-desc" id={id}>
-                {descripcion.filter(desc => desc.id === id).map((desc, index) => (
+                {descripcion.filter(desc => desc.id.toString() === id).map((desc, index) => (
                     <div key={index}className="full-card">
                         <h2>{desc.name}</h2>
                         <img src={desc.pictureURL} alt="unisex hoodie" id="picture-store"/>

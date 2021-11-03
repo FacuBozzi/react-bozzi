@@ -68,7 +68,7 @@ nav a{
 
 .producto-descripcion{
     display:grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto;
     grid-row: auto auto;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
