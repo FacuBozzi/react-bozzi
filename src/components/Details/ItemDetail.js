@@ -1,4 +1,5 @@
 import { useParams } from "react-router"
+import { Link } from "react-router-dom"
 import { useState } from "react"
 import Contador from "../Contador"
 
@@ -19,13 +20,6 @@ const ItemDetail = ({descripcion}) => {
         setBotones(conBotones)
     }
 
-    const renderBotones = () => {
-        <>
-            <button className="agregador-btn">Terminar mi Compra</button>
-            <button className="agregador-btn">Cancelar</button>
-        </>
-    }
-
     return (
         <>
             <div className="produc-desc" id={id}>
@@ -38,7 +32,8 @@ const ItemDetail = ({descripcion}) => {
                         <h4 id="texto-descripcion">{desc.description}</h4>
                         <h5 id="texto-descripcion">Only {desc.stock} units left.</h5>
                         <Contador initial={0} stock={descripcion} miDesc={desc} changeCont={cont => setCont(prevCount => prevCount + cont)} carritoActual={cont} compras={COMPRA_FINAL} funcionBoton={navigateTo} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
-                        {botones === COMPRA_FINAL && cont >= 1 ? <> <button className="agregador-btn terminar-compra terminar-compra-primero">Terminar mi Compra</button> <button className="agregador-btn terminar-compra">Cancelar</button> </> : null}
+                        {botones === COMPRA_FINAL && cont >= 1 ? <div className="aparecen-botones"><Link to='/cart'><button className="agregador-btn terminar-compra terminar-compra-primero">Terminar mi Compra</button></Link><button className="agregador-btn terminar-compra" onClick={() => navigateTo(COMPRA_NO_FINAL)}>Cancelar</button> </div> : null}
+                        {botones === COMPRA_NO_FINAL && cont !== 0 ? setCont(0) : null}
                     </div>
                 ))}
             </div>
