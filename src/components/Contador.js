@@ -34,6 +34,13 @@ const Contador = (props) => {
                 }
             }
 
+
+    const multipleFunctions = () => {
+        props.changeCont(contador);
+        setContador(props.initial);
+        props.funcionBoton(props.compras)
+    }
+
     return (    
         <>
             <div className="contador-app">
@@ -51,8 +58,7 @@ const Contador = (props) => {
                     </i></button>
                 </div>
                 <button className="agregador-btn" onClick={() => {
-                    props.changeCont(contador);
-                    setContador(props.initial)
+                    multipleFunctions()
                     }}>Agregar al carrito
                 </button>
             </div>

@@ -16,7 +16,6 @@ const ItemDetail = ({descripcion}) => {
     const [botones, setBotones] = useState(COMPRA_NO_FINAL)
 
     const navigateTo = (conBotones) => {
-        console.log("navigateTo funciona")
         setBotones(conBotones)
     }
 
@@ -38,10 +37,8 @@ const ItemDetail = ({descripcion}) => {
                         <p>{cont}</p>
                         <h4 id="texto-descripcion">{desc.description}</h4>
                         <h5 id="texto-descripcion">Only {desc.stock} units left.</h5>
-                        <Contador initial={0} stock={descripcion} miDesc={desc} changeCont={cont => setCont(prevCount => prevCount + cont)} onClick={function() {navigateTo()}} carritoActual={cont} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
-                        {botones === COMPRA_FINAL ? renderBotones() : null}
-                        {botones === COMPRA_FINAL ? console.log("hoa") : null}
-                        {botones === COMPRA_FINAL && renderBotones()}
+                        <Contador initial={0} stock={descripcion} miDesc={desc} changeCont={cont => setCont(prevCount => prevCount + cont)} carritoActual={cont} compras={COMPRA_FINAL} funcionBoton={navigateTo} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
+                        {botones === COMPRA_FINAL && cont >= 1 ? <> <button className="agregador-btn terminar-compra terminar-compra-primero">Terminar mi Compra</button> <button className="agregador-btn terminar-compra">Cancelar</button> </> : null}
                     </div>
                 ))}
             </div>
