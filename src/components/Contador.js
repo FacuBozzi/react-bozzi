@@ -15,11 +15,12 @@ const Contador = (props) => {
     (props.stock).filter(desc => desc.id.toString() === id).map((desc, index) => (
         stockRestante = desc.stock
         ))
+        
+    //consigue la cantidad de productos que el usuario quiere agregar al carrito
+    // cantidadProductos = props.carritoActual
     
-    
-        console.log(stockRestante)
             const sumarContador = () => {
-                if (contador < stockRestante) {
+                if (contador < stockRestante && props.carritoActual < stockRestante) {
                     setContador(contador + 1);
                 } else {
                     alert("No hay mas stock");
@@ -32,6 +33,7 @@ const Contador = (props) => {
                     alert("No puede elegir un número negativo");
                 }
             }
+
     return (    
         <>
             <div className="contador-app">
@@ -49,7 +51,8 @@ const Contador = (props) => {
                     </i></button>
                 </div>
                 <button className="agregador-btn" onClick={() => {
-                    props.onAdd();
+                    props.changeCont(contador);
+                    setContador(props.initial)
                     }}>Agregar al carrito
                 </button>
             </div>
