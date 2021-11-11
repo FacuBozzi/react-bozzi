@@ -4,26 +4,29 @@ import Contador from "./components/Contador"
 import Titulo from "./components/Titulo"
 import ItemDetailContainer from "./components/Details/ItemDetailContainer"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { CartProvider } from "./components/context/CartContext"
 
 const App = () => {
 
     return (
         <>
-            <Router> 
-                <NavBar/>
-                <Titulo name="tutores de Coder"/>
-                <Switch> 
-                    <Route path="/" exact> 
-                        <ItemListContainer/>
-                    </Route>
-                    <Route path="/category/:id" exact> 
-                        <ItemListContainer/>
-                    </Route>
-                    <Route path="/item/:id" exact> 
-                        <ItemDetailContainer/>
-                    </Route>
-                </Switch>
-            </Router>
+        <CartProvider>
+                <Router> 
+                    <NavBar/>
+                    <Titulo name="tutores de Coder"/>
+                    <Switch> 
+                        <Route path="/" exact> 
+                            <ItemListContainer/>
+                        </Route>
+                        <Route path="/category/:id" exact> 
+                            <ItemListContainer/>
+                        </Route>
+                        <Route path="/item/:id" exact> 
+                            <ItemDetailContainer/>
+                        </Route>
+                    </Switch>
+                </Router>
+            </CartProvider>
         </>
     )
 }

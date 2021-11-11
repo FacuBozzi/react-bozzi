@@ -1,9 +1,19 @@
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useContext } from "react"
 import Contador from "../Contador"
+import { CartContext } from '../context/CartContext';
 
 const ItemDetail = ({descripcion}) => {
+
+    const {items, clear} = useContext(CartContext)
+
+    var arrayItems = [];
+
+    for(var item in items){
+        var itemsInCart = items[item];
+        arrayItems.push(itemsInCart.item.id);
+    }
 
     //logica para sumar contador carrito
     const [cont, setCont] = useState(0)
