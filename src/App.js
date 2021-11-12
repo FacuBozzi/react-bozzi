@@ -10,19 +10,19 @@ const App = () => {
 
     return (
         <>
-        <CartProvider>
-                <Router> 
-                    <NavBar/>
-                    <Titulo name="tutores de Coder"/>
-                    <Switch> 
-                        <Route path="/" exact> 
-                            <ItemListContainer/>
+            <CartProvider>
+                <Router>
+                    <NavBar />
+                    <Titulo name="tutores de Coder" />
+                    <Switch>
+                        <Route path="/" exact>
+                            <ItemListContainer />
                         </Route>
-                        <Route path="/category/:id" exact> 
-                            <ItemListContainer/>
+                        <Route path="/category/:id" exact>
+                            <ItemListContainer />
                         </Route>
-                        <Route path="/item/:id" exact> 
-                            <ItemDetailContainer/>
+                        <Route path="/item/:id" exact>
+                            <ItemDetailContainer />
                         </Route>
                     </Switch>
                 </Router>
