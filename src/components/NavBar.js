@@ -1,10 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../style.css"
 import CartWidget from './CartWidget';
-import {Navbar} from 'react-bootstrap';
-import {Nav} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
-import {Container} from 'react-bootstrap';
+import {Navbar, Nav, Container} from 'react-bootstrap';
+import {Link, Route} from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -19,7 +17,7 @@ const NavBar = () => {
                             <Nav.Link><Link to={"/category/:categoryId"} className="route-link">Sign In</Link></Nav.Link>
                             <Nav.Link>Products</Nav.Link>
                             <Nav.Link  className="carrito">Cart</Nav.Link>
-                            <CartWidget/>
+                            <Route path="/cart"><CartWidget/></Route>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -1,10 +1,10 @@
 import ItemListContainer from "./components/Items/ItemListContainer"
 import NavBar from "./components/NavBar"
-import Contador from "./components/Contador"
 import Titulo from "./components/Titulo"
 import ItemDetailContainer from "./components/Details/ItemDetailContainer"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { CartProvider } from "./components/context/CartContext"
+import Cart from "./components/Cart"
 
 const App = () => {
 
@@ -23,6 +23,9 @@ const App = () => {
                         </Route>
                         <Route path="/item/:id" exact>
                             <ItemDetailContainer />
+                        </Route>
+                        <Route path="/cart" exact>
+                            <Cart />
                         </Route>
                     </Switch>
                 </Router>
