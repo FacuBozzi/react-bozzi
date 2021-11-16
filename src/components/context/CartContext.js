@@ -25,11 +25,11 @@ export const CartProvider = (props) => {
 
     };
 
-    //logica de limpiar carrito
-    const clear = () => setCart([]);
+  //logica de limpiar carrito
+  const clear = () => setCart([]);
 
 
-    console.log(cart)
+  console.log(cont)
 
   return (
     <CartContext.Provider value={[cart, addItem, clear, cont, setCont]}>
