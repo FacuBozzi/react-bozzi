@@ -7,10 +7,8 @@ import { CartContext } from '../context/CartContext';
 const ItemDetail = ({descripcion}) => {
 
     //contexto pasado para el componente
-    const [cart, addItem, clear] = useContext(CartContext)
+    const [cart, addItem, clear, cont, setCont] = useContext(CartContext)
 
-    //logica para sumar contador carrito
-    const [cont, setCont] = useState(0)
 
     const { id } = useParams();
 
@@ -30,7 +28,6 @@ const ItemDetail = ({descripcion}) => {
             addItem({cantidad: cont, title: desc.name,price: desc.price, image: desc.pictureURL, descripcion: desc.description})
         })
     }
-
 
 
     return (

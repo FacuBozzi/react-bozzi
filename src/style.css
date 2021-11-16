@@ -204,3 +204,9 @@ nav a{
 .terminar-compra-primero{
     margin-top: 40px;
 }
+
+/* SECCION CARRITO */
+#imagen-carrito{
+    width: 120px;
+    height: 120px;
+}

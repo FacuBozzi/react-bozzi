@@ -4,9 +4,11 @@ export const CartContext = React.createContext();
 
 export const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
+  const [cont, setCont] = useState(0)
 
     //logica del carrito
     const addItem = (item) => {
+        if (cart.length !== 0) return
         var itemExiste = cart.find(Items => Items.item.id === item.item.id)
         if(itemExiste){
             setCart(cart.map((Items) => {
@@ -30,7 +32,7 @@ export const CartProvider = (props) => {
     console.log(cart)
 
   return (
-    <CartContext.Provider value={[cart, addItem, clear]}>
+    <CartContext.Provider value={[cart, addItem, clear, cont, setCont]}>
       {props.children}
     </CartContext.Provider>
   )

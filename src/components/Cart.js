@@ -4,23 +4,20 @@ import { useContext } from "react"
 const Cart = () => {
 
     const [cart] = useContext(CartContext)
-    const hola = "hola"
-    console.log(cart)
+
 
     const carritoLleno = cart.map((item, index) => (
         <div key={index}>
             <h1>{item.title}</h1>
-            <img src={item.image} alt="" />
+            <img src={item.image} alt="" id="imagen-carrito"/>
             <h3>{item.cantidad}</h3>
-            <p>{item.price}</p>
-            <p>{hola}</p>
+            <p>{console.log(Number((item.price).substring(1)) + 1 )}</p>
         </div>
     ))
     
     return (
         <div>
             {carritoLleno}
-            <p>{hola}</p>
         </div>
     )
 }
