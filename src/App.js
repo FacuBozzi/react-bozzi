@@ -26,6 +26,7 @@ const App = () => {
                         </Route>
                         <Route path="/cart" exact>
                             <Cart />
+                            <p style={{textAlign: "center"}}>hola</p>
                         </Route>
                     </Switch>
                 </Router>
