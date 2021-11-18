@@ -4,7 +4,12 @@ import { useContext } from "react"
 const Cart = () => {
 
     const [cart, cont, setCont] = useContext(CartContext)
-
+    
+    //vaciando carrito cuando cambia la url
+    // const url = window.location.pathname.split('/').pop();
+    // useEffect(() => {
+    //     setCart([])
+    // }, [url]);
 
     const carritoLleno = cart.map((item, index) => (
         <div className="container-background">
@@ -15,6 +20,7 @@ const Cart = () => {
                     <p>Precio: {item.price}</p>
                     <h3>Cantidad: {item.cantidad}</h3>
                     <p>Total: ${Number((item.price).substring(1)) * (item.cantidad)}</p>
+                    {/* <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.cantidad) + Number.EPSILON) * 100) / 100}</p> */}
                 </div>
             </div>
         </div>

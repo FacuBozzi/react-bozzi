@@ -29,6 +29,8 @@ const ItemDetail = ({descripcion}) => {
         })
     }
 
+    console.log(cont)
+
 
     return (
         <>

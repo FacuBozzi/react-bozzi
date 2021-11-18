@@ -238,10 +238,13 @@ nav a{
 }
 .carrito-product h1{
     font-size: 1.5rem;
+    margin: 0;
 }
 .carrito-product h3{
     font-size: 1.2rem;
+    margin: 0;
 }
 .carrito-product p{
     font-weight: semi-bold;
+    margin: 0;
 }
