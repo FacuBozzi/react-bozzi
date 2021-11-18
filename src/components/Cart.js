@@ -1,15 +1,11 @@
 import { CartContext } from "./context/CartContext"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 
 const Cart = () => {
 
-    const [cart, cont, setCont] = useContext(CartContext)
-    
-    //vaciando carrito cuando cambia la url
-    // const url = window.location.pathname.split('/').pop();
-    // useEffect(() => {
-    //     setCart([])
-    // }, [url]);
+    const [cart, clear, cont, setCont] = useContext(CartContext)
+
+   
 
     const carritoLleno = cart.map((item, index) => (
         <div className="container-background">
@@ -19,12 +15,18 @@ const Cart = () => {
                     <h1>{item.title}</h1>
                     <p>Precio: {item.price}</p>
                     <h3>Cantidad: {item.cantidad}</h3>
-                    <p>Total: ${Number((item.price).substring(1)) * (item.cantidad)}</p>
-                    {/* <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.cantidad) + Number.EPSILON) * 100) / 100}</p> */}
+                    <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.cantidad) + Number.EPSILON) * 100) / 100}</p>
+                    <button onClick={() => clear(item.id)}>Eliminar</button>
                 </div>
             </div>
         </div>
     ))
+
+     //vaciando carrito cuando cambia la url
+    //  const url = window.location.pathname.split('/').pop();
+    //  useEffect(() => {
+    //      clear()
+    //  }, [url]);
     
     return (
         <div>
