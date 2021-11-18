@@ -43,9 +43,9 @@ const ItemDetail = ({descripcion}) => {
                         <p>{cont}</p>
                         <h4 id="texto-descripcion">{desc.description}</h4>
                         <h5 id="texto-descripcion">Only {desc.stock} units left.</h5>
-                        <Contador initial={0} stock={descripcion} miDesc={desc} changeCont={cont => setCont(prevCount => prevCount + cont)} carritoActual={cont} compras={COMPRA_FINAL} funcionBoton={navigateTo} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
+                        <Contador initial={0} stock={descripcion} miDesc={desc} changeCont={(cont) => setCont(prevCount => prevCount + cont)} carritoActual={cont} compras={COMPRA_FINAL} funcionBoton={navigateTo} onAdd={function() {console.log("Accion realizada exitosamente")}}/>
                         {botones === COMPRA_FINAL && cont >= 1 ? <div className="aparecen-botones"><Link to='/cart'><button className="agregador-btn terminar-compra terminar-compra-primero" onClick={addToCart}>Terminar mi Compra</button></Link><button className="agregador-btn terminar-compra" onClick={clear}>Vaciar Carrito</button><button className="agregador-btn terminar-compra" onClick={() => navigateTo(COMPRA_NO_FINAL)}>Cancelar</button> </div> : null}
-                        {botones === COMPRA_NO_FINAL && cont !== 0 ? setCont(0) : null}
+                        {botones === COMPRA_NO_FINAL && cont !== 0 ? () => setCont(0) : null}
                     </div>
                 ))}
             </div>
