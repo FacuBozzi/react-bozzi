@@ -25,9 +25,10 @@ const ItemDetail = ({descripcion}) => {
     //funcion de context para agregar al carrito cuando el usuario clickee "terminar compra"
     const addToCart = () => {
         descripcion.filter(desc => desc.id.toString() === id).map((desc) => {
-            addItem({cantidad: cont, title: desc.name,price: desc.price, image: desc.pictureURL, descripcion: desc.description})
+            addItem({cantidad: cont, id: desc.id, title: desc.name,price: desc.price, image: desc.pictureURL, descripcion: desc.description})
         })
     }
+
 
     console.log(cont)
 

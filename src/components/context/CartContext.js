@@ -28,11 +28,18 @@ export const CartProvider = (props) => {
   //logica de limpiar carrito
   const clear = () => setCart([]);
 
+  //logica de eliminar un item del carrito
+  const removeItem = (id) => {
+    const borrarItems = cart.filter((item) => item.item.id !== id);
+    setCart(borrarItems)
+}
+
+
 
   console.log(cart)
 
   return (
-    <CartContext.Provider value={[cart, addItem, clear, cont, setCont]}>
+    <CartContext.Provider value={[cart, addItem, removeItem, clear, cont, setCont]}>
       {props.children}
     </CartContext.Provider>
   )
