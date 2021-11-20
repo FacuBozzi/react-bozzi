@@ -17,7 +17,7 @@ const NavBar = () => {
                             <Nav.Link><Link to={"/category/:categoryId"} className="route-link">Sign In</Link></Nav.Link>
                             <Nav.Link>Products</Nav.Link>
                             <Nav.Link  className="carrito">Cart</Nav.Link>
-                            <Route path="/cart"><CartWidget/></Route>
+                            <Link to={"/cart"}> <CartWidget/> </Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

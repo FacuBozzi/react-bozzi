@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react"
 
 const Cart = () => {
 
-    const [cart, clear, removeItem, cont, setCont] = useContext(CartContext)
+    const [cart, addItem, removeItem, clear, cont, setCont] = useContext(CartContext)
 
     const carritoLleno = cart.map((item, index) => (
         <div className="container-background">
@@ -14,7 +14,7 @@ const Cart = () => {
                     <p>Precio: {item.price}</p>
                     <h3>Cantidad: {item.cantidad}</h3>
                     <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.cantidad) + Number.EPSILON) * 100) / 100}</p>
-                    <button onClick={removeItem(/*item.id hay que fijar que este pasado*/)}>Eliminar</button>
+                    <button onClick={removeItem(item.id)}>Eliminar</button>
                 </div>
             </div>  
         </div>

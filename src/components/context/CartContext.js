@@ -30,6 +30,7 @@ export const CartProvider = (props) => {
 
   //logica de eliminar un item del carrito
   const removeItem = (id) => {
+    if (cart.length !== 0) return
     const borrarItems = cart.filter((item) => item.item.id !== id);
     setCart(borrarItems)
 }

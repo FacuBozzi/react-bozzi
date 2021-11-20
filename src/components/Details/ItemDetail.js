@@ -7,7 +7,7 @@ import { CartContext } from '../context/CartContext';
 const ItemDetail = ({descripcion}) => {
 
     //contexto pasado para el componente
-    const [cart, addItem, clear, cont, setCont] = useContext(CartContext)
+    const [cart, addItem, removeItem, clear, cont, setCont] = useContext(CartContext)
 
 
     const { id } = useParams();
