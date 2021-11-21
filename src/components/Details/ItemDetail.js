@@ -28,7 +28,7 @@ const ItemDetail = ({descripcion}) => {
         })
     }
 
-    console.log(cont)
+    console.log(cart)
 
     return (
         <>

@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Product from "../../product.json";
 import ItemDetail from "./ItemDetail";
 import { Link } from "react-router-dom";
+import { CartContext } from '../context/CartContext';
 
 const ItemDetailContainer = () => {
 
-    const [details, setDetails] = useState([]);
+    //contexto pasado para el componente
+    const [cart, addItem, removeItem, clear, cont, setCont, details, setDetails] = useContext(CartContext)
     
     const getItem = () => {
         return new Promise((resolve, reject) => {
