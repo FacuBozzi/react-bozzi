@@ -13,9 +13,9 @@ const App = () => {
             <CartProvider>
                 <Router>
                     <NavBar />
-                    <Titulo name="tutores de Coder" />
                     <Switch>
                         <Route path="/" exact>
+                            <Titulo name="tutores de Coder" />
                             <ItemListContainer />
                         </Route>
                         <Route path="/category/:id" exact>

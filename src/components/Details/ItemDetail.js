@@ -9,7 +9,6 @@ const ItemDetail = ({descripcion}) => {
     //contexto pasado para el componente
     const [cart, addItem, removeItem, clear, cont, setCont] = useContext(CartContext)
 
-
     const { id } = useParams();
 
     //agregar botones
@@ -29,9 +28,7 @@ const ItemDetail = ({descripcion}) => {
         })
     }
 
-
     console.log(cont)
-
 
     return (
         <>
@@ -41,7 +38,6 @@ const ItemDetail = ({descripcion}) => {
                         <h2>{desc.name}</h2>
                         <img src={desc.pictureURL} alt="unisex hoodie" id="picture-store"/>
                         <p>{desc.price}</p>
-                        <p>{cont}</p>
                         <h4 id="texto-descripcion">{desc.description}</h4>
                         <h5 id="texto-descripcion">Only {desc.stock} units left.</h5>
                         <Contador initial={0} stock={descripcion} miDesc={desc} changeCont={(cont) => setCont(prevCount => prevCount + cont)} carritoActual={cont} compras={COMPRA_FINAL} funcionBoton={navigateTo} onAdd={function() {console.log("Accion realizada exitosamente")}}/>

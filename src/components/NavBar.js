@@ -16,7 +16,6 @@ const NavBar = () => {
                         <Nav className="ms-auto">
                             <Nav.Link><Link to={"/category/:categoryId"} className="route-link">Sign In</Link></Nav.Link>
                             <Nav.Link>Products</Nav.Link>
-                            <Nav.Link  className="carrito">Cart</Nav.Link>
                             <Link to={"/cart"}> <CartWidget/> </Link>
                         </Nav>
                     </Navbar.Collapse>

@@ -26,7 +26,7 @@ export const CartProvider = (props) => {
     };
 
   //logica de limpiar carrito
-  const clear = () => setCart([]);
+  const clear = () => { setCart([]); setCont(0)};
 
   //logica de eliminar un item del carrito
   const removeItem = (id) => {
