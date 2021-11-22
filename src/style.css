@@ -152,6 +152,7 @@ nav a{
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .product-add-button{
@@ -260,4 +261,14 @@ nav a{
 .carrito-product p{
     font-weight: semi-bold;
     margin: 0;
+}
+
+/*seccion carrito vacio*/
+#carrito-vacio{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#boton-volver{
+    margin-top: 110px;
 }

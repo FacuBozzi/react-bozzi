@@ -39,7 +39,7 @@ export const CartProvider = (props) => {
 
 
 
-  console.log(cart)
+  console.log(cart.length)
 
   return (
     <CartContext.Provider value={[cart, addItem, removeItem, clear, cont, setCont, details, setDetails]}>

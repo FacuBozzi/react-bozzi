@@ -1,5 +1,6 @@
 import { CartContext } from "./context/CartContext"
 import { useContext, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 const Cart = () => {
 
@@ -21,15 +22,21 @@ const Cart = () => {
         </div>
     ))
 
-     //vaciando carrito cuando cambia la url
-    //  const url = window.location.pathname.split('/').pop();
-    //  useEffect(() => {
-    //      clear()
-    //  }, [url]);
+    const carritoVacio = () => {
+        return (
+            <div>
+                <h1 id="carrito-vacio">Carrito Vacio</h1>
+                <Link to="/"><button className="agregador-btn terminar-compra" id="boton-volver">Ver Articulos</button></Link>
+            </div>
+        )
+    }
+
+    console.log(cart.length)
+
     
     return (
         <div>
-           {carritoLleno}
+           {cont > 0 ? carritoLleno : carritoVacio()}
         </div>
     )
 }
