@@ -5,6 +5,7 @@ const Cart = () => {
 
     const [cart, addItem, removeItem, clear, cont, setCont] = useContext(CartContext)
 
+    console.log(cart)
     const carritoLleno = cart.map((item, index) => (
         <div className="container-background">
             <div className="carrito-container">

@@ -15,7 +15,7 @@ const CartWidget = () => {
         })
     }
 
-    console.log(cart)
+    console.log(id)
 
     return (
         <div className="carritoCont" onClick={addToCart}>

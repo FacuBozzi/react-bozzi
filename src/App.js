@@ -12,19 +12,22 @@ const App = () => {
         <>
             <CartProvider>
                 <Router>
-                    <NavBar />
                     <Switch>
                         <Route path="/" exact>
+                            <NavBar />
                             <Titulo name="tutores de Coder" />
                             <ItemListContainer />
                         </Route>
                         <Route path="/category/:id" exact>
+                            <NavBar />
                             <ItemListContainer />
                         </Route>
                         <Route path="/item/:id" exact>
+                            <NavBar />
                             <ItemDetailContainer />
                         </Route>
                         <Route path="/cart" exact>
+                            <NavBar />
                             <Cart />
                         </Route>
                     </Switch>
