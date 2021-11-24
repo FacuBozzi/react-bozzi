@@ -9,24 +9,40 @@ export const CartProvider = (props) => {
   const [details, setDetails] = useState([]);
 
     //logica del carrito
+    // const addItem = (item) => {
+    //     if (cart.length !== 0) return
+    //     var itemExiste = cart.find(Items => Items.item.id === item.item.id)
+    //     if(itemExiste){
+    //         setCart(cart.map((Items) => {
+    //             if (Items.item.id === item.item.id){
+    //                 Items.cantidad = Items.cantidad + item.cantidad;
+    //             } 
+    //             return Items;
+    //         }))
+    //     } else {
+    //         const newCart = [...cart, item];
+    //         setCart([...cart, item]);
+    //         setCart(newCart);
+    //     }
+
+    // };
+
     const addItem = (item) => {
-        if (cart.length !== 0) return
-        var itemExiste = cart.find(Items => Items.item.id === item.item.id)
-        if(itemExiste){
-            setCart(cart.map((Items) => {
-                if (Items.item.id === item.item.id){
-                    Items.cantidad = Items.cantidad + item.cantidad;
-                } 
-                return Items;
-            }))
-        } else {
-            const newCart = [...cart, item];
-            setCart([...cart, item]);
-            setCart(newCart);
-        }
-
-    };
-
+      if (cart.length !== 0) return
+      var itemFound = cart.find(itemState => itemState.item.id === item.item.id)
+      console.log(itemFound)
+      if(itemFound){
+          setCart(cart.map((itemState) => {
+              if (itemState.item.id === item.item.id){
+                  itemState.quantity = itemState.quantity + item.quantity;
+              } 
+              return itemState;
+          }))
+      } else {
+          const newItems = [...cart, item];
+          setCart([...cart, item]);
+      }
+    }
   //logica de limpiar carrito
   const clear = () => { setCart([]); setCont(0)};
 

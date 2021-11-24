@@ -39,6 +39,8 @@ const Contador = (props) => {
         props.changeCont(contador);
         setContador(props.initial);
         props.funcionBoton(props.compras)
+        props.agregarCarrito(props.desc)
+        console.log("funciona gregorio")
     }
 
     return (    

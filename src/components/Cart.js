@@ -17,10 +17,12 @@ const Cart = () => {
                     <h3>Cantidad: {item.cantidad}</h3>
                     <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.cantidad) + Number.EPSILON) * 100) / 100}</p>
                     <button onClick={removeItem(item.id)}>Eliminar</button>
+                    {console.log(item)}
                 </div>
             </div>  
         </div>
     ))
+
 
     const carritoVacio = () => {
         return (
