@@ -7,6 +7,10 @@ export const CartProvider = (props) => {
   const [cont, setCont] = useState(0)
   //array productos
   const [details, setDetails] = useState([]);
+  //precio
+  const [price, setPrice] = useState(0);
+  //datos de los productos (totales) importados de firebase
+  const [datos, setDatos] = useState([]);
 
     //logica del carrito
     // const addItem = (item) => {
@@ -54,11 +58,10 @@ export const CartProvider = (props) => {
 }
 
 
-
-  console.log(cart.length)
+  console.log(datos)
 
   return (
-    <CartContext.Provider value={[cart, addItem, removeItem, clear, cont, setCont, details, setDetails]}>
+    <CartContext.Provider value={[cart, addItem, removeItem, clear, cont, setCont, details, setDetails, price, setPrice, datos, setDatos]}>
       {props.children}
     </CartContext.Provider>
   )

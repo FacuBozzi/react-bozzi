@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const Cart = () => {
 
-    const [cart, addItem, removeItem, clear, cont, setCont] = useContext(CartContext)
+    const [cart, addItem, removeItem, clear, cont, setCont, details, setDetails, price, setPrice] = useContext(CartContext)
 
     console.log(cart)
     const carritoLleno = cart.map((item, index) => (
@@ -13,16 +13,17 @@ const Cart = () => {
                 <div key={index} className="carrito-product">
                     <img src={item.image} alt="" id="imagen-carrito"/>
                     <h1>{item.title}</h1>
-                    <p>Precio: {item.price}</p>
+                    <p>Precio: {item.price} {setPrice(item.price)}</p>
                     <h3>Cantidad: {item.cantidad}</h3>
                     <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.cantidad) + Number.EPSILON) * 100) / 100}</p>
                     <button onClick={removeItem(item.id)}>Eliminar</button>
-                    {console.log(item)}
+                    {console.log(price)}
                 </div>
             </div>  
         </div>
     ))
 
+    console.log(price)
 
     const carritoVacio = () => {
         return (
