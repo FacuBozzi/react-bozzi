@@ -34,7 +34,7 @@ export const CartProvider = (props) => {
     const addItem = (item) => {
       if (cart.length !== 0) return
       var itemFound = cart.find(itemState => itemState.item.id === item.item.id)
-      console.log(itemFound)
+      console.log("EL ITEM FOUND", itemFound)
       if(itemFound){
           setCart(cart.map((itemState) => {
               if (itemState.item.id === item.item.id){

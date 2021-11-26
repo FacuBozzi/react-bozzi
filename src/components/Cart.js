@@ -11,13 +11,12 @@ const Cart = () => {
         <div className="container-background">
             <div className="carrito-container">
                 <div key={index} className="carrito-product">
-                    <img src={item.image} alt="" id="imagen-carrito"/>
+                    <img src={item.pictureURL} alt="" id="imagen-carrito"/>
                     <h1>{item.title}</h1>
                     <p>Precio: {item.price} {setPrice(item.price)}</p>
-                    <h3>Cantidad: {item.cantidad}</h3>
-                    <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.cantidad) + Number.EPSILON) * 100) / 100}</p>
+                    <h3>Cantidad: {cont}</h3>
+                    <p>Total: ${Math.round((Number((item.price).substring(1)) * (cont) + Number.EPSILON) * 100) / 100}</p>
                     <button onClick={removeItem(item.id)}>Eliminar</button>
-                    {console.log(price)}
                 </div>
             </div>  
         </div>
