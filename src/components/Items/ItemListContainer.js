@@ -25,17 +25,16 @@ const ItemListContainer = () => {
 
     const db = getFirestore(app);
 
-    const Comprador = collection(db, 'Comprador');
-    // const newProduct = {
-    //     comprador: "Pedro",
-    //     items: cart,
-    //     date: firebase.firestore.Timestamp.fromDate(new Date()),
-    //     total: price
-    // }
+    const Comprador = doc(collection(db, 'Comprador'));
+
+    //genera el timestamp
     const time = new Date().getTime()
     var date = new Date(time);
+
+    //crea el objeto de comprador y le auto-asigna un id unico
+    //tambien puede actualizar el documento
     const newComprador = async () =>{
-        await setDoc(doc(db, "Comprador", "comprador"), {
+        await setDoc(Comprador, {
             comprador: "Pedro",
             telefono: "123456789",
             email: "pedroargossi@gmail.com",
@@ -45,14 +44,6 @@ const ItemListContainer = () => {
         })
     }
 
-    // const updateComprador = async () =>{
-    //     await updateDoc(Comprador, {
-    //         items: cart,
-    //         date: date,
-    //         total: price
-    //     });
-    // }
-  
 
     async function getProducts(db) {
         const productCol = collection(db, 'Products');
