@@ -55,7 +55,6 @@ const ItemListContainer = () => {
     useEffect(() => {
         getProducts(db);
         newComprador();
-        // updateComprador();
     }, [])
 
 
