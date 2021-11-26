@@ -43,7 +43,6 @@ export const CartProvider = (props) => {
               return itemState;
           }))
       } else {
-          const newItems = [...cart, item];
           setCart([...cart, item]);
       }
     }

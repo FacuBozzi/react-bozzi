@@ -2,7 +2,7 @@ import ItemList from "./ItemList";
 import { useState, useEffect, useContext } from "react";
 import Product from "../../product.json";
 import { initializeApp } from "firebase/app"
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, doc, setDoc, updateDoc } from 'firebase/firestore/lite';
 import { CartContext } from '../context/CartContext';
 
 
@@ -25,14 +25,34 @@ const ItemListContainer = () => {
 
     const db = getFirestore(app);
 
-    // const product = collection(db, 'product');
+    const Comprador = collection(db, 'Comprador');
     // const newProduct = {
     //     comprador: "Pedro",
     //     items: cart,
     //     date: firebase.firestore.Timestamp.fromDate(new Date()),
     //     total: price
     // }
+    const time = new Date().getTime()
+    var date = new Date(time);
+    const newComprador = async () =>{
+        await setDoc(doc(db, "Comprador", "comprador"), {
+            comprador: "Pedro",
+            telefono: "123456789",
+            email: "pedroargossi@gmail.com",
+            items: cart,
+            date: date,
+            total: price
+        })
+    }
 
+    // const updateComprador = async () =>{
+    //     await updateDoc(Comprador, {
+    //         items: cart,
+    //         date: date,
+    //         total: price
+    //     });
+    // }
+  
 
     async function getProducts(db) {
         const productCol = collection(db, 'Products');
@@ -43,6 +63,8 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         getProducts(db);
+        newComprador();
+        // updateComprador();
     }, [])
 
 
