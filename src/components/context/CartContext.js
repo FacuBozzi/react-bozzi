@@ -32,20 +32,46 @@ export const CartProvider = (props) => {
     // };
 
     const addItem = (item) => {
-      if (cart.length !== 0) return
-      var itemFound = cart.find(itemState => itemState.item.id === item.item.id)
+      var itemFound = cart.find(itemState => itemState.id === item.id)
       console.log("EL ITEM FOUND", itemFound)
+      console.log(1, itemFound);
       if(itemFound){
+        console.log(100000);
           setCart(cart.map((itemState) => {
-              if (itemState.item.id === item.item.id){
+              if (itemState.id === item.id){
                   itemState.quantity = itemState.quantity + item.quantity;
-              } 
+                  // setCont(itemState.quantity)
+              }
               return itemState;
           }))
       } else {
-          setCart([...cart, item]);
+          // setCart([item]);
+          console.log(20000)
+            setCart([...cart, item]);
+            console.log(2, cart);
       }
+      console.log(3, cart);
     }
+
+
+    // const addItem = (item) => {
+    //   if (cart.length !== 0) return
+    //   var itemFound = cart.find(itemState => itemState.item.id === item.item.id)
+    //   console.log("EL ITEM FOUND", itemFound)
+    //   if(itemFound){
+    //       setCart(cart.map((itemState) => {
+    //           if (itemState.item.id === item.item.id){
+    //               itemState.quantity = itemState.quantity + item.quantity;
+    //           } 
+    //           return itemState;
+    //       }))
+    //   } else {
+    //       setCart([...cart, item]);
+    //   }
+    // }
+
+
+
   //logica de limpiar carrito
   const clear = () => { setCart([]); setCont(0)};
 
