@@ -29,8 +29,6 @@ const ItemDetail = ({descripcion}) => {
         })
     }
 
-    console.log("contador actual",cont)
-
 
     return (
         <>

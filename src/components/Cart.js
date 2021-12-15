@@ -6,7 +6,6 @@ const Cart = () => {
 
     const [cart, addItem, removeItem, clear, cont, setCont, details, setDetails, price, setPrice] = useContext(CartContext)
 
-    console.log("ENELCARRITO",cart)
     const carritoLleno = cart.map((item, index) => (
         <div className="container-background">
             <div className="carrito-container">
@@ -22,7 +21,6 @@ const Cart = () => {
         </div>
     ))
 
-    console.log(price)
 
     const carritoVacio = () => {
         return (
@@ -33,7 +31,6 @@ const Cart = () => {
         )
     }
 
-    console.log(cart.length)
 
     
     return (

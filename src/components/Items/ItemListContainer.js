@@ -1,5 +1,5 @@
 import ItemList from "./ItemList";
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import Product from "../../product.json";
 import { initializeApp } from "firebase/app"
 import { getFirestore, collection, getDocs, doc, setDoc, updateDoc } from 'firebase/firestore/lite';

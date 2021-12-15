@@ -20,9 +20,8 @@ const Contador = (props) => {
         stockRestante = desc.stock
         ))
         
+        
     //consigue la cantidad de productos que el usuario quiere agregar al carrito
-    // cantidadProductos = props.carritoActual
-    
             const sumarContador = () => {
                 if (contador < stockRestante && props.carritoActual < stockRestante) {
                     setContador(contador + 1);
@@ -42,9 +41,6 @@ const Contador = (props) => {
     const multipleFunctions = () => {
         setCont(contador)
         props.funcionBoton(props.compras)
-        // props.agregarCarrito(props.desc)
-        // addItem(props.desc)
-        console.log("funciona gregorio")
     }
 
     return (    
