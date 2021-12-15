@@ -44,7 +44,6 @@ const Contador = (props) => {
         props.funcionBoton(props.compras)
         // props.agregarCarrito(props.desc)
         // addItem(props.desc)
-        alert(contador)
         console.log("funciona gregorio")
     }
 

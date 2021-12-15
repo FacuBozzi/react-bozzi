@@ -11,7 +11,7 @@ const Cart = () => {
         <div className="container-background">
             <div className="carrito-container">
                 <div key={index} className="carrito-product">
-                    <img src={item.pictureURL} alt="" id="imagen-carrito"/>
+                    <img src={item.image} alt="" id="imagen-carrito"/>
                     <h1>{item.title}</h1>
                     <p>Precio: {item.price} {setPrice(item.price)}</p>
                     <h3>Cantidad: {item.quantity}</h3>

@@ -25,6 +25,7 @@ const ItemDetail = ({descripcion}) => {
     const addToCart = () => {
         datos.filter(desc => desc.id.toString() === id).map((desc) => {
             addItem({quantity: contador, id: desc.id, title: desc.name,price: desc.price, image: desc.pictureURL, descripcion: desc.description})
+            setCont(0)
         })
     }
 
