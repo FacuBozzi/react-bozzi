@@ -16,7 +16,7 @@ const Cart = () => {
                     <p>Precio: {item.price} {setPrice(item.price)}</p>
                     <h3>Cantidad: {item.quantity}</h3>
                     <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.quantity) + Number.EPSILON) * 100) / 100}</p>
-                    <button onClick={() => {removeItem(item.id)}}>Eliminar</button>
+                    <button onClick={() => {removeItem(item.id)}} id="eliminar-cart">Eliminar</button>
                 </div>
             </div>  
         </div>

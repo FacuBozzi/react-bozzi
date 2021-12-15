@@ -223,16 +223,30 @@ nav a{
 #imagen-carrito{
     width: 150px;
     height: 150px;
+    border-radius: 30px;
+}
+
+#eliminar-cart{
+    font-weight: 500;
+    font-size: 0.8rem;
+    border-radius: 44px;
+    border: none;
+    outline:none;
+    background-color: black;
+    color: white;
+    display: block;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding:0.4rem;
 }
 
 .container-background{
     width: 75%;
     text-align: center;
     height: 200px;
-    background-color: aquamarine;
-    margin-left: auto;
-    margin-right: auto;
-    
+    background-color: rgba(219, 205, 205, 0.7);
+    margin: 40px auto 0 auto;
+    border-radius: 40px;
 }
 .carrito-container{
     width: 1000px;
