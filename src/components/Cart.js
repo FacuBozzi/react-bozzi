@@ -6,7 +6,7 @@ const Cart = () => {
 
     const [cart, addItem, removeItem, clear, cont, setCont, details, setDetails, price, setPrice] = useContext(CartContext)
 
-    console.log(cart)
+    console.log("ENELCARRITO",cart)
     const carritoLleno = cart.map((item, index) => (
         <div className="container-background">
             <div className="carrito-container">
@@ -14,9 +14,9 @@ const Cart = () => {
                     <img src={item.pictureURL} alt="" id="imagen-carrito"/>
                     <h1>{item.title}</h1>
                     <p>Precio: {item.price} {setPrice(item.price)}</p>
-                    <h3>Cantidad: {cont}</h3>
-                    <p>Total: ${Math.round((Number((item.price).substring(1)) * (cont) + Number.EPSILON) * 100) / 100}</p>
-                    <button onClick={removeItem(item.id)}>Eliminar</button>
+                    <h3>Cantidad: {item.quantity}</h3>
+                    <p>Total: ${Math.round((Number((item.price).substring(1)) * (item.quantity) + Number.EPSILON) * 100) / 100}</p>
+                    <button onClick={() => {removeItem(item.id)}}>Eliminar</button>
                 </div>
             </div>  
         </div>
@@ -38,7 +38,7 @@ const Cart = () => {
     
     return (
         <div>
-           {cont > 0 ? carritoLleno : carritoVacio()}
+           {cart.length > 0 ? carritoLleno : carritoVacio()}
         </div>
     )
 }

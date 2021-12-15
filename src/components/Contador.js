@@ -1,15 +1,19 @@
-import { useState } from "react"
+import { useState, useContext} from "react"
 import "../style.css"
 import { useParams } from "react-router"
+import { CartContext } from './context/CartContext';
 
 const Contador = (props) => {
+
+    //contexto para el componente
+    const [cart, addItem, removeItem, clear, cont, setCont, details, setDetails, price, setPrice, datos, setDatos, contador, setContador] = useContext(CartContext)
+
 
     const {id} = useParams()
     
     let stockRestante;
 
     const initial = props.initial;
-    let [contador, setContador] = useState(initial);
 
     //consigue el stock restante de los detalles del producto
     (props.stock).filter(desc => desc.id.toString() === id).map((desc, index) => (
@@ -36,10 +40,11 @@ const Contador = (props) => {
 
 
     const multipleFunctions = () => {
-        props.changeCont(contador);
-        setContador(props.initial);
+        setCont(contador)
         props.funcionBoton(props.compras)
-        props.agregarCarrito(props.desc)
+        // props.agregarCarrito(props.desc)
+        // addItem(props.desc)
+        alert(contador)
         console.log("funciona gregorio")
     }
 
